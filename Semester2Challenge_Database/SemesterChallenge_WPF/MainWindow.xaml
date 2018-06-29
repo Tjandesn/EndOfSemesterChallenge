@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-            <DataGrid x:Name="dgProcedures" VerticalAlignment="Top" Margin="10,10,10,10" AutoGenerateColumns="True">
+            <DataGrid x:Name="dgProcedures" SelectionChanged="dgProcedures_SelectionChanged" VerticalAlignment="Top" Margin="10,10,10,10" AutoGenerateColumns="True">
 
             </DataGrid>
             <DataGrid x:Name="dgTreatments" VerticalAlignment="Bottom" Margin="10,10,10,10" AutoGenerateColumns="True">
