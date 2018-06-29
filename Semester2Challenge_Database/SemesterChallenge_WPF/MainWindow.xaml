@@ -5,15 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SemesterChallenge_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="LightYellow" Loaded="Window_Loaded" Closed="Window_Closed">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-            <DataGrid x:Name="dgProcedures" SelectionChanged="dgProcedures_SelectionChanged" VerticalAlignment="Top" Margin="10,10,10,10" AutoGenerateColumns="True">
+        <TabControl TabStripPlacement="Left" Background="LightYellow">
+            <TabItem Width="100" Height="50" Background="Azure" Header="Procedures">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <Label HorizontalAlignment="Center" FontSize="20">Procedures</Label>
+                    <DataGrid x:Name="dgProcedures" Width="650" SelectionChanged="dgProcedures_SelectionChanged" VerticalAlignment="Top" Margin="10,10,10,10" AutoGenerateColumns="True">
 
-            </DataGrid>
-            <DataGrid x:Name="dgTreatments" VerticalAlignment="Bottom" Margin="10,10,10,10" AutoGenerateColumns="True">
+                    </DataGrid>
+                    <Label HorizontalAlignment="Center" FontSize="20">Treatments</Label>
+                    <DataGrid x:Name="dgTreatments" Width="650" VerticalAlignment="Bottom" Margin="10,10,10,10" AutoGenerateColumns="True">
 
-            </DataGrid>
-        </StackPanel>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Width="100" Height="50" Background="Azure" Header="Owners">
+                <StackPanel>
+                    <Label HorizontalAlignment="Center" FontSize="22">Pet Owners</Label>
+                    <DataGrid x:Name="dgOwners" SelectionChanged="dgOwners_SelectionChanged" Width="650" VerticalAlignment="Top" Margin="10,10,10,10" AutoGenerateColumns="True">
+                        
+                    </DataGrid>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                        <Label>ID Number:</Label>
+                        <TextBox x:Name="txtID" Width="300" Margin="33,0,0,0"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                        <Label>First Name:</Label>
+                        <TextBox x:Name="txtFirst" Width="300" Margin="33,0,0,0"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                        <Label>Last Name:</Label>
+                        <TextBox x:Name="txtLast" Width="300" Margin="35,0,0,0"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                        <Label>Phone Number:</Label>
+                        <TextBox x:Name="txtPhone" Width="300" Margin="10,0,0,0" HorizontalAlignment="Center"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                        <Button x:Name="btnCreate" Width="100" Height="30" Margin="10,10,10,10" Click="btnCreate_Click">Create</Button>
+                        <Button x:Name="btnUpdate" Width="100" Height="30" Margin="10,10,10,10" Click="btnUpdate_Click">Update</Button>
+                        <Button x:Name="btnDelete" Width="100" Height="30" Margin="10,10,10,10" Click="btnDelete_Click">Delete</Button>
+                        <Button x:Name="btnRefresh" Width="100" Height="30" Margin="10,10,10,10" Click="btnRefresh_Click">Refresh</Button>
+                    </StackPanel>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
